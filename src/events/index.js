@@ -18,6 +18,10 @@ const eventHandlers = {
     'player/toggleIsReady': (socket, data, callback) => import('./player/toggleIsReady.js').then(module => module.default(socket, data, callback)),
     'player/update': (socket, data, callback) => import('./player/update.js').then(module => module.default(socket, data, callback)),
     'player/delete': (socket, data, callback) => import('./player/delete.js').then(module => module.default(socket, data, callback)),
+
+    'mirroring/url': (socket, data, callback) => import('./mirroring/url.js').then(module => module.default(socket, data, callback)),
+    'mirroring/media': (socket, data, callback) => import('./mirroring/media.js').then(module => module.default(socket, data, callback)),
+    'mirroring/clear': (socket, data, callback) => import('./mirroring/clear.js').then(module => module.default(socket, data, callback)),
 };
 
 export default eventHandlers;
