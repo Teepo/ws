@@ -21,6 +21,14 @@ export default class GameServer {
 
         const isHTTPS = argv.https ?? false;
 
+        const config = {
+            maxHttpBufferSize : 2e6, // 2Mo 
+            cors: {
+                origin: '*',
+                credentials: true
+            }
+        };
+
         if (isHTTPS) {
 
             const server = createServer({
@@ -30,20 +38,10 @@ export default class GameServer {
 
             server.listen(PORT);
 
-            this.ws = new Server(server, {
-                cors: {
-                    origin: '*',
-                    credentials: true
-                }
-            });
+            this.ws = new Server(server, config);
         }
         else {
-            this.ws = new Server(PORT, {
-                cors: {
-                    origin: '*',
-                    credentials: true
-                }
-            });
+            this.ws = new Server(PORT, config);
         }
 
         this.ws.on('connection', socket => {

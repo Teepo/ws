@@ -1,6 +1,3 @@
-export default function(socket, data, callback) {
-
+export default function(socket, data) {
     socket.broadcast.emit(data);
-
-    callback(data);
 };
