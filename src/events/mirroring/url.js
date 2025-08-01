@@ -1,8 +1,6 @@
 export default function(socket, data, callback) {
 
-    const { } = data;
-
-    socket.broadcast.emit(eventType, data);
+    socket.broadcast.emit(data);
 
     callback(data);
 };
