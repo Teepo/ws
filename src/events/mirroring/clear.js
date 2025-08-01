@@ -1,3 +1,3 @@
-export default function(socket, data) {
-    socket.broadcast.emit(data);
+export default function(socket) {
+    socket.broadcast.emit('mirroring/clear');
 };

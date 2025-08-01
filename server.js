@@ -52,7 +52,7 @@ export default class GameServer {
                     eventHandlers[eventName](socket, data, callback);
                 }
                 else {
-                    defaultHandler(socket, data, callback);
+                    defaultHandler(socket, eventName, data);
                 }
             });
         });
