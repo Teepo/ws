@@ -22,7 +22,7 @@ export default class GameServer {
         const isHTTPS = argv.https ?? false;
 
         const config = {
-            maxHttpBufferSize : 2e6, // 2Mo 
+            maxHttpBufferSize : 5e6, // 5Mo
             cors: {
                 origin: '*',
                 credentials: true
